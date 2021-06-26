@@ -1,0 +1,142 @@
+
+
+{% extends "index.html" %}
+
+{% block content %}
+
+    <!--https://www.codeply.com/go/nhbdi2FkJm-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+
+            <!-- form card login -->
+            <div class="card rounded-0">
+
+                <div class="card-header">
+                    <h3 class="mb-0">{{ form_name }}</h3>
+                </div>
+                <div class="card-body">
+
+                    <form class="form" action="{{ action }}" method=post>
+                        {{ form.hidden_tag() }}
+
+                        <div class="form-group">
+                            {{ form.cust_name.label }}
+                            {{ form.cust_name(class_="form-control") }}
+
+                            {% if form.cust_name.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_name.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.cust_address.label }}
+                            {{ form.cust_address(class_="form-control") }}
+
+                            {% if form.cust_address.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_address.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.cust_city.label }}
+                            {{ form.cust_city(class_="form-control") }}
+
+                            {% if form.cust_city.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_city.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.cust_state.label }}
+                            {{ form.cust_state(class_="form-control") }}
+
+                            {% if form.cust_state.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_state.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.cust_zip.label }}
+                            {{ form.cust_zip(class_="form-control") }}
+
+                            {% if form.cust_zip.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_zip.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.cust_country.label }}
+                            {{ form.cust_country(class_="form-control") }}
+
+                            {% if form.cust_country.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_country.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.cust_contact.label }}
+                            {{ form.cust_contact(class_="form-control") }}
+
+                            {% if form.cust_contact.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_contact.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.cust_email.label }}
+                            {{ form.cust_email(class_="form-control") }}
+
+                            {% if form.cust_email.errors %}
+                                <div class="alert alert-danger" role="alert">
+                                    {% for message in form.cust_email.errors %}
+                                        <div>{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        {{ form.submit(class_="btn btn-success") }}
+
+                    </form>
+                </div>
+                <!--/card-block-->
+            </div>
+            <!-- /form card login -->
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

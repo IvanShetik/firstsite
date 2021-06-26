@@ -1,0 +1,46 @@
+
+
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Vend id</th>
+                <th scope="col">Vend name</th>
+                <th scope="col">Vend address</th>
+                <th scope="col">Vend city</th>
+                <th scope="col">Vend state</th>
+                <th scope="col">Vend zip</th>
+                <th scope="col">Vend country</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vendor in vendors %}
+            <tr >
+                <td> {{vendor.vend_id}} </td>
+                <td> {{vendor.vend_name}} </td>
+                <td> {{vendor.vend_address}} </td>
+                <td> {{vendor.vend_city}} </td>
+                <td> {{vendor.vend_state}} </td>
+                <td> {{vendor.vend_zip}} </td>
+                <td> {{vendor.vend_country}} </td>
+
+                <td>
+                    <button type="button" class="btn btn-warning" name="btn_edit_vendor" data-vend_id="{{vendor.vend_id}}">Редактировать</button>
+                    <br><button style = "margin-top:10px;" type="button" class="btn btn-danger" name="btn_delete_vendor" data-vend_id="{{vendor.vend_id}}">Удалить</button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ </div>
+<button type="button" class = "btn btn-info" name = "btn_new_vendor">Добавить</button>
+
+ <script src="{{ url_for('static', filename='js/vendor.js') }}"></script>
+
+{% endblock %}

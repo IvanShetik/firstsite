@@ -1,0 +1,50 @@
+
+
+{% extends "index.html" %}
+
+{% block content %}
+
+
+
+ <div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Cust id</th>
+                <th scope="col">Cust name</th>
+                <th scope="col">Cust address</th>
+                <th scope="col">Cust city</th>
+                <th scope="col">Cust state</th>
+                <th scope="col">Cust zip</th>
+                <th scope="col">Cust country</th>
+                <th scope="col">Cust contact</th>
+                <th scope="col">Cust email</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr >
+                <td> {{customer.cust_id}} </td>
+                <td> {{customer.cust_name}} </td>
+                <td> {{customer.cust_address}} </td>
+                <td> {{customer.cust_city}} </td>
+                <td> {{customer.cust_state}} </td>
+                <td> {{customer.cust_zip}} </td>
+                <td> {{customer.cust_country}} </td>
+                <td> {{customer.cust_contact}} </td>
+                <td> {{customer.cust_email}} </td>
+
+                <td>
+                    <button type="button" class="btn btn-warning" name="btn_edit_customer" data-cust_id="{{customer.cust_id}}">Редактировать</button>
+                    <button style = "margin-top:10px;" type="button" class="btn btn-danger" name="btn_delete_customer" data-cust_id="{{customer.cust_id}}">Удалить</button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ </div>
+<button type="button" class = "btn btn-info" name = "btn_new_customer">Добавить</button>
+
+ <script src="{{ url_for('static', filename='js/customer.js') }}"></script>
+
+{% endblock %}
